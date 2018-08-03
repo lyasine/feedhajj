@@ -7,6 +7,10 @@ import {AccountsComponent} from "./pages/accounts/accounts.component";
 import {StoresComponent} from "./pages/stores/stores.component";
 import {RegisterComponent} from "./pages/accounts/register/register.component";
 import {StoreEditComponent} from "./pages/stores/store-edit/store-edit.component";
+import {HealthmapComponent} from "./pages/healthmap/healthmap.component";
+import {HealthmapeditComponent} from "./pages/healthmap/healthmapedit/healthmapedit.component";
+import {DonationsComponent} from "./pages/donations/donations.component";
+import {DonationEditComponent} from "./pages/donations/donation-edit/donation-edit.component";
 
 
 export const routing = RouterModule.forRoot([
@@ -17,6 +21,12 @@ export const routing = RouterModule.forRoot([
     { path: 'editaccount/:id', component: RegisterComponent },
     { path: 'newstore', component: StoreEditComponent },
     { path: 'storeedit/:id', component: StoreEditComponent },
+    { path: 'healthmap', component: HealthmapComponent },
+    { path: 'healthmapedit', component: HealthmapeditComponent },
+    { path: 'donations', component: DonationsComponent },
+    { path: 'donationedit', component: DonationEditComponent },
+    //{ path: 'donationedit/:id', component: DonationEditComponent },
+
     { path:'', redirectTo:'/accounts', pathMatch:"full" }
 
 ]);

@@ -1,0 +1,72 @@
+<div class="d-flex align-items-center pb-4">
+  <h1 class="h2 m-0">{{ donation.id ? 'Edit Donation' : 'New Donation' }}</h1>
+</div>
+
+<form class="form">
+  <div class="p-4 bg-light">
+    <h4>Store Information</h4>
+    <hr>
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <label>Donator Name</label>
+          <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="donation.name" aria-describedby="emailHelp" placeholder="Name">
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group">
+          <label>Store Name</label>
+          <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="donation.identificationnumber" aria-describedby="emailHelp" placeholder="Store Name">
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="donation.date" aria-describedby="emailHelp" placeholder="Date">
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="bg-light p-4 mt-4">
+      <h4>Donation Details</h4>
+      <hr>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr ngfor="let item of donation.items | async">
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.amount }}</td>
+        </tr>
+          <tr>
+            <td><input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="donationitem.name" ></td>
+            <td><input type="number" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="donationitem.quantity" ></td>
+            <td><input type="number" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="donationitem.price" ></td>
+            <td><button type="button" (click)="addItem()" class="btn btn-primary" >+</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+  <hr>
+  <div class="d-flex">
+    <button [hidden]="!donation.id" (click)="deleteDonation()" class="btn btn-outline-danger">Delete</button>
+    <button (click)="onSave()" class="btn btn-primary ml-auto">Submit</button>
+  </div>
+</form>

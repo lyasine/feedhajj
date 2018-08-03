@@ -1,0 +1,30 @@
+<div class="d-flex align-items-center pb-4">
+  <h1 class="h2 m-0">Donations</h1>
+  <a routerLink="/donationedit" routerLinkActive="active" class="btn btn-primary ml-auto">
+    <span data-feather="shop"></span> New Donation
+  </a>
+</div>
+
+
+
+
+<table class="table table-bordered table-stripped">
+  <thead>
+  <tr>
+    <th>Donator Name</th>
+    <th>Store Name</th>
+    <th>Date</th>
+
+    <th class=" text-center">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of donationList | async">
+    <td class="align-middle">{{ item.name }}</td>
+    <td class="align-middle">{{ item.storename }}</td>
+    <td class="align-middle">{{ item.date }}</td>
+
+    <td class="align-middle text-center"><a routerLink="/donationedit/{{item.id}}" routerLinkActive="active" class="btn btn-outline-primary btn-sm"> Edit </a></td>
+  </tr>
+  </tbody>
+</table>

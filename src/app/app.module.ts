@@ -15,6 +15,10 @@ import {AngularFireModule} from "angularfire2";
 import {AngularFirestoreModule} from "angularfire2/firestore";
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {StoreEditComponent} from "./pages/stores/store-edit/store-edit.component";
+import { HealthmapComponent } from './pages/healthmap/healthmap.component';
+import { HealthmapeditComponent } from './pages/healthmap/healthmapedit/healthmapedit.component';
+import { DonationsComponent } from './pages/donations/donations.component';
+import { DonationEditComponent } from './pages/donations/donation-edit/donation-edit.component';
 
 
 
@@ -26,6 +30,10 @@ import {StoreEditComponent} from "./pages/stores/store-edit/store-edit.component
       MainMenuComponent,
       RegisterComponent,
       StoreEditComponent,
+      HealthmapComponent,
+      HealthmapeditComponent,
+      DonationsComponent,
+      DonationEditComponent,
 
   ],
   imports: [

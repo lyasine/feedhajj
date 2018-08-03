@@ -12,6 +12,6 @@ export class Product{
     weight : number;
     sugarprohibit : boolean;
     pressureprohibit  : boolean;
-
+    store : string;
 
 }

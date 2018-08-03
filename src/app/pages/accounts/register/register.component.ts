@@ -12,7 +12,7 @@ import {Subscription} from "rxjs";
 })
 export class RegisterComponent implements OnInit, OnDestroy {
 
-  account : Account = new Account();
+  account : any = {};
   private sub: Subscription;
   constructor( private service: AccountService, private router : Router, private activatedRoute : ActivatedRoute) {
 
@@ -27,14 +27,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
             this.account.id = params['id'];
 
           });
-
-
       }
     })
   }
 
   onSave(){
-     //this.account.setRiskLevel();
+
     this.setRiskLevel(this.account);
     if(!this.account.id) {
       this.service.createAccount(this.account).then(response => {

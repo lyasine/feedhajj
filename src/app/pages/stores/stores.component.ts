@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {StoresService} from "../../services/stores.service";
 
 @Component({
   selector: 'stores',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoresComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : StoresService) { }
+
+  storeList : Observable<any>;
 
   ngOnInit() {
+    this.storeList =  this.service.getStores();
   }
 
 }

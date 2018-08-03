@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
+import {Http, Headers} from "@angular/http";
 import {AngularFirestore} from "angularfire2/firestore";
 import {map} from "rxjs/internal/operators";
 import {Store} from "../models/store";
@@ -18,14 +18,19 @@ export class StoresService {
   url : string = "/stores.json";
 
   getStores(){
+
+
     return this.storeCollection.snapshotChanges().pipe(
         map(actions => actions.map(a => {
           const data = a.payload.doc.data() as Store;
+
           const id = a.payload.doc.id;
           return {id, ...data};
         }))
     );
+
   }
+
 
   createStore(store : any){
 
@@ -50,4 +55,5 @@ export class StoresService {
   deleteStore(id){
     return this.storeCollection.doc(id).delete();
   }
+
 }
