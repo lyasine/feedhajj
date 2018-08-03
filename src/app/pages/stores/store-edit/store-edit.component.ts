@@ -41,11 +41,16 @@ export class StoreEditComponent implements OnInit, OnDestroy {
             });
         }
         else {
-            debugger;
+
             this.service.updateStore(this.store).then(response => {
                 this.router.navigate(['/stores']);
             });
         }
+    }
+
+    deleteStore(){
+        this.service.deleteStore(this.store.id);
+        this.router.navigate(['/stores']);
     }
 
     ngOnDestroy(){

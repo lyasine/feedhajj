@@ -35,7 +35,7 @@ export class DonationEditComponent implements OnInit {
 
   addItem(){
     this.donationitem.amount = this.donationitem.quantity * this.donationitem.price;
-    this.donationItems.push(this.donationitem);
+
   }
 
 

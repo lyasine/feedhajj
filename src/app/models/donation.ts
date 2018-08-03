@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
 
 export class Donation{
     constructor(){
-        this.items = [];
+
     }
 
     name : string;

@@ -19,6 +19,7 @@ import { HealthmapComponent } from './pages/healthmap/healthmap.component';
 import { HealthmapeditComponent } from './pages/healthmap/healthmapedit/healthmapedit.component';
 import { DonationsComponent } from './pages/donations/donations.component';
 import { DonationEditComponent } from './pages/donations/donation-edit/donation-edit.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -34,6 +35,7 @@ import { DonationEditComponent } from './pages/donations/donation-edit/donation-
       HealthmapeditComponent,
       DonationsComponent,
       DonationEditComponent,
+      LoginComponent,
 
   ],
   imports: [
