@@ -1,3 +1,4 @@
+import {Observable} from "rxjs";
 /**
  * Created by Yasine on 8/3/2018.
  */
@@ -11,7 +12,7 @@ export class Donation{
     name : string;
     storename : string ;
     date : string;
-    items : DonationItem[];
+    items : Observable<DonationItem[]>;
     description : string;
 
 }

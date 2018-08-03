@@ -46,7 +46,7 @@
           </tr>
         </thead>
         <tbody>
-        <tr ngfor="let item of donation.items | async">
+        <tr ngfor="let item of donationItems | async">
             <td>{{ item.name }}</td>
             <td>{{ item.quantity }}</td>
             <td>{{ item.price }}</td>
